@@ -104,26 +104,6 @@ document.getElementById('joinForm').addEventListener('submit', function (e) {
     submitBtn.disabled = true;
     submitBtn.innerText = '提交中...';
 
-    fetch('https://script.google.com/macros/s/AKfycbwZpASi0F7JTiV_X8b6mnUGiEyW1ijF0KuTHlo3ECDerLSZSFcOU9szbNtMajD8_MesPw/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: new URLSearchParams(data)
-    })
-        .then(response => {
-            alert('表單已成功送出！');
-            document.getElementById('joinForm').reset(); // 清空表單
-            // 啟用提交按鈕
-            submitBtn.disabled = false;
-            submitBtn.innerText = '送出';
-        })
-        .catch(error => {
-            alert('表單提交失敗，請重試。');
-            // 啟用提交按鈕
-            submitBtn.disabled = false;
-            submitBtn.innerText = '送出';
-        });
+    
 });
 
